@@ -45,24 +45,25 @@ async def upload_file(file: UploadFile = File(...)):
         "suggested_target": get_smart_column_suggestion(df)
     }
 
+# ... import lainnya tetap sama ...
+
 @app.post("/train", response_model=TrainingResponse)
 def train_model(request: TrainRequest):
-    """
-    1. Receives the filename and target column
-    2. Auto-detects Classification vs Regression
-    3. Trains the model
-    """
     try:
         df_full = pd.read_csv(f"data/{request.filename}")
         
-        # Auto-detect task if user didn't specify
         if request.task_type == "auto":
             task = detect_task_type(df_full, request.target_column)
         else:
             task = request.task_type
 
-        # Run Training
-        result = engine.train(request.filename, request.target_column, task)
+        # Update baris ini: Teruskan request.model_choice ke engine
+        result = engine.train(
+            filename=request.filename, 
+            target=request.target_column, 
+            task=task, 
+            model_id=request.model_choice  # <-- Kirim pilihan model (auto/rf/dt/dll)
+        )
         
         return result
 
