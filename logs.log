@@ -17831,3 +17831,818 @@ Increase the number of iterations (max_iter) or scale the data as shown in:
                  <catboost.core.CatBoostRegressor object at 0x0000020A9BD60B50>)],
          verbose=False)
 2026-02-02 16:49:17,903:INFO:save_model() successfully completed......................................
+2026-02-03 10:15:06,415:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2026-02-03 10:15:06,417:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2026-02-03 10:15:06,417:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2026-02-03 10:15:06,417:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2026-02-03 10:15:12,766:INFO:PyCaret RegressionExperiment
+2026-02-03 10:15:12,766:INFO:Logging name: reg-default-name
+2026-02-03 10:15:12,766:INFO:ML Usecase: MLUsecase.REGRESSION
+2026-02-03 10:15:12,767:INFO:version 3.3.2
+2026-02-03 10:15:12,767:INFO:Initializing setup()
+2026-02-03 10:15:12,767:INFO:self.USI: ff1c
+2026-02-03 10:15:12,767:INFO:self._variable_keys: {'X_test', 'y', 'X', 'y_train', 'idx', 'logging_param', 'seed', 'memory', 'exp_name_log', 'fold_groups_param', 'data', 'target_param', 'USI', 'gpu_n_jobs_param', 'n_jobs_param', 'X_train', 'exp_id', 'transform_target_param', 'fold_generator', 'log_plots_param', '_available_plots', 'html_param', 'y_test', 'fold_shuffle_param', 'pipeline', 'gpu_param', '_ml_usecase'}
+2026-02-03 10:15:12,767:INFO:Checking environment
+2026-02-03 10:15:12,767:INFO:python_version: 3.11.9
+2026-02-03 10:15:12,767:INFO:python_build: ('tags/v3.11.9:de54cf5', 'Apr  2 2024 10:12:12')
+2026-02-03 10:15:12,767:INFO:machine: AMD64
+2026-02-03 10:15:12,807:INFO:platform: Windows-10-10.0.26200-SP0
+2026-02-03 10:15:12,807:INFO:Memory: svmem(total=16866873344, available=2415759360, percent=85.7, used=14451113984, free=2415759360)
+2026-02-03 10:15:12,807:INFO:Physical Core: 8
+2026-02-03 10:15:12,807:INFO:Logical Core: 16
+2026-02-03 10:15:12,808:INFO:Checking libraries
+2026-02-03 10:15:12,808:INFO:System:
+2026-02-03 10:15:12,808:INFO:    python: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2026-02-03 10:15:12,808:INFO:executable: C:\Users\tream\AppData\Local\Programs\Python\Python311\python.exe
+2026-02-03 10:15:12,808:INFO:   machine: Windows-10-10.0.26200-SP0
+2026-02-03 10:15:12,808:INFO:PyCaret required dependencies:
+2026-02-03 10:15:13,036:INFO:                 pip: 24.0
+2026-02-03 10:15:13,036:INFO:          setuptools: 80.9.0
+2026-02-03 10:15:13,036:INFO:             pycaret: 3.3.2
+2026-02-03 10:15:13,036:INFO:             IPython: 9.8.0
+2026-02-03 10:15:13,036:INFO:          ipywidgets: 8.1.8
+2026-02-03 10:15:13,036:INFO:                tqdm: 4.67.1
+2026-02-03 10:15:13,036:INFO:               numpy: 1.26.4
+2026-02-03 10:15:13,036:INFO:              pandas: 2.1.4
+2026-02-03 10:15:13,036:INFO:              jinja2: 3.1.6
+2026-02-03 10:15:13,037:INFO:               scipy: 1.11.4
+2026-02-03 10:15:13,037:INFO:              joblib: 1.3.2
+2026-02-03 10:15:13,037:INFO:             sklearn: 1.4.2
+2026-02-03 10:15:13,037:INFO:                pyod: 2.0.6
+2026-02-03 10:15:13,037:INFO:            imblearn: 0.14.1
+2026-02-03 10:15:13,037:INFO:   category_encoders: 2.7.0
+2026-02-03 10:15:13,037:INFO:            lightgbm: 4.6.0
+2026-02-03 10:15:13,037:INFO:               numba: 0.63.1
+2026-02-03 10:15:13,037:INFO:            requests: 2.32.5
+2026-02-03 10:15:13,037:INFO:          matplotlib: 3.7.5
+2026-02-03 10:15:13,037:INFO:          scikitplot: 0.3.7
+2026-02-03 10:15:13,037:INFO:         yellowbrick: 1.5
+2026-02-03 10:15:13,037:INFO:              plotly: 6.5.0
+2026-02-03 10:15:13,037:INFO:    plotly-resampler: Not installed
+2026-02-03 10:15:13,037:INFO:             kaleido: 1.2.0
+2026-02-03 10:15:13,037:INFO:           schemdraw: 0.15
+2026-02-03 10:15:13,037:INFO:         statsmodels: 0.14.6
+2026-02-03 10:15:13,037:INFO:              sktime: 0.26.0
+2026-02-03 10:15:13,037:INFO:               tbats: 1.1.3
+2026-02-03 10:15:13,037:INFO:            pmdarima: 2.0.4
+2026-02-03 10:15:13,037:INFO:              psutil: 7.1.3
+2026-02-03 10:15:13,037:INFO:          markupsafe: 3.0.3
+2026-02-03 10:15:13,037:INFO:             pickle5: Not installed
+2026-02-03 10:15:13,038:INFO:         cloudpickle: 3.1.2
+2026-02-03 10:15:13,038:INFO:         deprecation: 2.1.0
+2026-02-03 10:15:13,038:INFO:              xxhash: 3.6.0
+2026-02-03 10:15:13,038:INFO:           wurlitzer: Not installed
+2026-02-03 10:15:13,038:INFO:PyCaret optional dependencies:
+2026-02-03 10:15:15,225:INFO:                shap: Not installed
+2026-02-03 10:15:15,226:INFO:           interpret: Not installed
+2026-02-03 10:15:15,226:INFO:                umap: Not installed
+2026-02-03 10:15:15,226:INFO:     ydata_profiling: Not installed
+2026-02-03 10:15:15,226:INFO:  explainerdashboard: Not installed
+2026-02-03 10:15:15,226:INFO:             autoviz: Not installed
+2026-02-03 10:15:15,226:INFO:           fairlearn: Not installed
+2026-02-03 10:15:15,226:INFO:          deepchecks: Not installed
+2026-02-03 10:15:15,226:INFO:             xgboost: 3.1.2
+2026-02-03 10:15:15,226:INFO:            catboost: 1.2.8
+2026-02-03 10:15:15,226:INFO:              kmodes: Not installed
+2026-02-03 10:15:15,226:INFO:             mlxtend: Not installed
+2026-02-03 10:15:15,226:INFO:       statsforecast: Not installed
+2026-02-03 10:15:15,226:INFO:        tune_sklearn: Not installed
+2026-02-03 10:15:15,226:INFO:                 ray: Not installed
+2026-02-03 10:15:15,226:INFO:            hyperopt: Not installed
+2026-02-03 10:15:15,226:INFO:              optuna: 4.6.0
+2026-02-03 10:15:15,226:INFO:               skopt: Not installed
+2026-02-03 10:15:15,226:INFO:              mlflow: Not installed
+2026-02-03 10:15:15,226:INFO:              gradio: Not installed
+2026-02-03 10:15:15,227:INFO:             fastapi: 0.123.10
+2026-02-03 10:15:15,227:INFO:             uvicorn: 0.38.0
+2026-02-03 10:15:15,227:INFO:              m2cgen: Not installed
+2026-02-03 10:15:15,227:INFO:           evidently: Not installed
+2026-02-03 10:15:15,227:INFO:               fugue: Not installed
+2026-02-03 10:15:15,227:INFO:           streamlit: Not installed
+2026-02-03 10:15:15,227:INFO:             prophet: Not installed
+2026-02-03 10:15:15,227:INFO:None
+2026-02-03 10:15:15,227:INFO:Set up data.
+2026-02-03 10:15:15,239:INFO:Set up folding strategy.
+2026-02-03 10:15:15,239:INFO:Set up train/test split.
+2026-02-03 10:15:15,300:INFO:Set up index.
+2026-02-03 10:15:15,300:INFO:Assigning column types.
+2026-02-03 10:15:15,305:INFO:Engine successfully changes for model 'lr' to 'sklearn'.
+2026-02-03 10:15:15,305:INFO:Engine for model 'lasso' has not been set explicitly, hence returning None.
+2026-02-03 10:15:15,312:INFO:Engine for model 'ridge' has not been set explicitly, hence returning None.
+2026-02-03 10:15:15,318:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2026-02-03 10:15:15,397:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:15:15,454:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2026-02-03 10:15:15,455:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:15:15,459:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:15:18,638:INFO:Engine for model 'lasso' has not been set explicitly, hence returning None.
+2026-02-03 10:15:18,648:INFO:Engine for model 'ridge' has not been set explicitly, hence returning None.
+2026-02-03 10:15:18,658:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2026-02-03 10:15:18,786:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:15:18,863:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2026-02-03 10:15:18,863:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:15:18,867:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:15:18,868:INFO:Engine successfully changes for model 'lasso' to 'sklearn'.
+2026-02-03 10:15:18,874:INFO:Engine for model 'ridge' has not been set explicitly, hence returning None.
+2026-02-03 10:15:18,880:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2026-02-03 10:15:18,957:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:15:19,019:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2026-02-03 10:15:19,020:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:15:19,024:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:15:19,031:INFO:Engine for model 'ridge' has not been set explicitly, hence returning None.
+2026-02-03 10:15:19,037:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2026-02-03 10:15:19,136:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:15:19,204:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2026-02-03 10:15:19,205:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:15:19,208:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:15:19,209:INFO:Engine successfully changes for model 'ridge' to 'sklearn'.
+2026-02-03 10:15:19,231:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2026-02-03 10:15:19,313:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:15:19,395:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2026-02-03 10:15:19,402:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:15:19,407:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:15:19,420:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2026-02-03 10:15:19,504:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:15:19,571:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2026-02-03 10:15:19,571:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:15:19,577:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:15:19,577:INFO:Engine successfully changes for model 'en' to 'sklearn'.
+2026-02-03 10:15:19,677:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:15:19,748:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2026-02-03 10:15:19,749:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:15:19,753:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:15:19,843:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:15:19,911:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2026-02-03 10:15:19,912:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:15:19,915:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:15:19,916:INFO:Engine successfully changes for model 'knn' to 'sklearn'.
+2026-02-03 10:15:20,029:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:15:20,106:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:15:20,109:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:15:20,211:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:15:20,283:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:15:20,286:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:15:20,287:INFO:Engine successfully changes for model 'svm' to 'sklearn'.
+2026-02-03 10:15:20,443:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:15:20,447:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:15:20,621:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:15:20,625:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:15:20,628:INFO:Preparing preprocessing pipeline...
+2026-02-03 10:15:20,628:INFO:Set up simple imputation.
+2026-02-03 10:15:20,640:INFO:Set up encoding of ordinal features.
+2026-02-03 10:15:20,642:INFO:Set up encoding of categorical features.
+2026-02-03 10:15:20,727:INFO:Finished creating preprocessing pipeline.
+2026-02-03 10:15:20,768:INFO:Pipeline: Pipeline(memory=FastMemory(location=C:\Users\tream\AppData\Local\Temp\joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['CRIM', 'ZN', 'INDUS', 'CHAS',
+                                             'NOX', 'RM', 'AGE', 'DIS', 'RAD',
+                                             'TAX', 'PTRATIO', 'B', 'LSTAT'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=['Age_Group'],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('ordinal_encoding',
+                 TransformerWrapper(include=['Age_Group'],
+                                    transformer=OrdinalEncoder(cols=['Age_Group'],
+                                                               handle_missing='return_nan',
+                                                               mapping=[{'col': 'Age_Group',
+                                                                         'data_type': dtype('O'),
+                                                                         'mapping': Mature    0
+Young     1
+NaN      -1
+dtype: int64}])))])
+2026-02-03 10:15:20,768:INFO:Creating final display dataframe.
+2026-02-03 10:15:20,954:INFO:Setup _display_container:                     Description             Value
+0                    Session id               123
+1                        Target              MEDV
+2                   Target type        Regression
+3           Original data shape         (243, 15)
+4        Transformed data shape         (243, 15)
+5   Transformed train set shape         (170, 15)
+6    Transformed test set shape          (73, 15)
+7              Numeric features                13
+8          Categorical features                 1
+9                    Preprocess              True
+10              Imputation type            simple
+11           Numeric imputation              mean
+12       Categorical imputation              mode
+13     Maximum one-hot encoding                25
+14              Encoding method              None
+15               Fold Generator             KFold
+16                  Fold Number                10
+17                     CPU Jobs                -1
+18                      Use GPU             False
+19               Log Experiment             False
+20              Experiment Name  reg-default-name
+21                          USI              ff1c
+2026-02-03 10:15:21,129:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:15:21,133:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:15:21,294:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:15:21,297:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:15:21,298:INFO:setup() successfully completed in 8.54s...............
+2026-02-03 10:15:21,299:INFO:Initializing create_model()
+2026-02-03 10:15:21,299:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001EAC0809390>, estimator=lr, fold=None, round=4, cross_validation=True, predict=True, fit_kwargs=None, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=True, add_to_model_list=True, metrics=None, display=None, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2026-02-03 10:15:21,299:INFO:Checking exceptions
+2026-02-03 10:15:21,300:INFO:Importing libraries
+2026-02-03 10:15:21,301:INFO:Copying training dataset
+2026-02-03 10:15:21,305:INFO:Defining folds
+2026-02-03 10:15:21,306:INFO:Declaring metric variables
+2026-02-03 10:15:21,306:INFO:Importing untrained model
+2026-02-03 10:15:21,306:INFO:Linear Regression Imported successfully
+2026-02-03 10:15:21,307:INFO:Starting cross validation
+2026-02-03 10:15:21,320:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2026-02-03 10:15:26,971:INFO:Calculating mean and std
+2026-02-03 10:15:26,973:INFO:Creating metrics dataframe
+2026-02-03 10:15:26,977:INFO:Finalizing model
+2026-02-03 10:15:27,026:INFO:Uploading results into container
+2026-02-03 10:15:27,027:INFO:Uploading model into container now
+2026-02-03 10:15:27,028:INFO:_master_model_container: 1
+2026-02-03 10:15:27,028:INFO:_display_container: 2
+2026-02-03 10:15:27,029:INFO:LinearRegression(n_jobs=-1)
+2026-02-03 10:15:27,029:INFO:create_model() successfully completed......................................
+2026-02-03 10:15:27,193:INFO:Initializing create_model()
+2026-02-03 10:15:27,193:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001EAC0809390>, estimator=dt, fold=None, round=4, cross_validation=True, predict=True, fit_kwargs=None, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=True, add_to_model_list=True, metrics=None, display=None, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2026-02-03 10:15:27,193:INFO:Checking exceptions
+2026-02-03 10:15:27,194:INFO:Importing libraries
+2026-02-03 10:15:27,195:INFO:Copying training dataset
+2026-02-03 10:15:27,199:INFO:Defining folds
+2026-02-03 10:15:27,199:INFO:Declaring metric variables
+2026-02-03 10:15:27,199:INFO:Importing untrained model
+2026-02-03 10:15:27,200:INFO:Decision Tree Regressor Imported successfully
+2026-02-03 10:15:27,200:INFO:Starting cross validation
+2026-02-03 10:15:27,201:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2026-02-03 10:15:32,185:INFO:Calculating mean and std
+2026-02-03 10:15:32,185:INFO:Creating metrics dataframe
+2026-02-03 10:15:32,189:INFO:Finalizing model
+2026-02-03 10:15:32,232:INFO:Uploading results into container
+2026-02-03 10:15:32,233:INFO:Uploading model into container now
+2026-02-03 10:15:32,234:INFO:_master_model_container: 2
+2026-02-03 10:15:32,234:INFO:_display_container: 3
+2026-02-03 10:15:32,234:INFO:DecisionTreeRegressor(random_state=123)
+2026-02-03 10:15:32,234:INFO:create_model() successfully completed......................................
+2026-02-03 10:15:32,386:INFO:Initializing create_model()
+2026-02-03 10:15:32,386:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001EAC0809390>, estimator=lightgbm, fold=None, round=4, cross_validation=True, predict=True, fit_kwargs=None, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=True, add_to_model_list=True, metrics=None, display=None, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2026-02-03 10:15:32,386:INFO:Checking exceptions
+2026-02-03 10:15:32,388:INFO:Importing libraries
+2026-02-03 10:15:32,388:INFO:Copying training dataset
+2026-02-03 10:15:32,393:INFO:Defining folds
+2026-02-03 10:15:32,393:INFO:Declaring metric variables
+2026-02-03 10:15:32,393:INFO:Importing untrained model
+2026-02-03 10:15:32,394:INFO:Light Gradient Boosting Machine Imported successfully
+2026-02-03 10:15:32,394:INFO:Starting cross validation
+2026-02-03 10:15:32,396:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2026-02-03 10:15:33,915:INFO:Calculating mean and std
+2026-02-03 10:15:33,916:INFO:Creating metrics dataframe
+2026-02-03 10:15:33,920:INFO:Finalizing model
+2026-02-03 10:15:33,983:INFO:[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.000424 seconds.
+2026-02-03 10:15:33,983:INFO:You can set `force_col_wise=true` to remove the overhead.
+2026-02-03 10:15:33,984:INFO:[LightGBM] [Info] Total Bins 463
+2026-02-03 10:15:33,985:INFO:[LightGBM] [Info] Number of data points in the train set: 170, number of used features: 12
+2026-02-03 10:15:33,987:INFO:[LightGBM] [Info] Start training from score 22.974706
+2026-02-03 10:15:33,989:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:33,990:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:33,991:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:33,992:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:33,992:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:33,995:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:33,995:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:33,996:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:33,997:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:33,998:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:33,999:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,000:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,001:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,002:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,003:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,004:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,004:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,005:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,006:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,009:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,010:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,011:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,011:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,011:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,012:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,012:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,016:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,017:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,018:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,018:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,019:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,024:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,025:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,025:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,026:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,026:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,027:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,031:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,032:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,033:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,033:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,034:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,038:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,040:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,044:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,045:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,045:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,046:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,047:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,048:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,051:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,052:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,053:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,053:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,054:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,054:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,057:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,058:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,059:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,060:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,060:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,061:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,064:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,064:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,065:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,066:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,067:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,068:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,068:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,070:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,071:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,072:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,072:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,073:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,073:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,074:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,075:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,075:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,077:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,078:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,079:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,079:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,080:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,080:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,081:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,082:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,082:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,084:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,084:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,085:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,085:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,086:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,086:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,087:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,087:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,087:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,088:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,089:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,089:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,090:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:15:34,099:INFO:Uploading results into container
+2026-02-03 10:15:34,100:INFO:Uploading model into container now
+2026-02-03 10:15:34,101:INFO:_master_model_container: 3
+2026-02-03 10:15:34,101:INFO:_display_container: 4
+2026-02-03 10:15:34,102:INFO:LGBMRegressor(n_jobs=-1, random_state=123)
+2026-02-03 10:15:34,102:INFO:create_model() successfully completed......................................
+2026-02-03 10:38:11,840:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2026-02-03 10:38:11,840:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2026-02-03 10:38:11,840:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2026-02-03 10:38:11,840:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2026-02-03 10:38:15,867:INFO:PyCaret RegressionExperiment
+2026-02-03 10:38:15,867:INFO:Logging name: reg-default-name
+2026-02-03 10:38:15,867:INFO:ML Usecase: MLUsecase.REGRESSION
+2026-02-03 10:38:15,867:INFO:version 3.3.2
+2026-02-03 10:38:15,867:INFO:Initializing setup()
+2026-02-03 10:38:15,867:INFO:self.USI: 444c
+2026-02-03 10:38:15,867:INFO:self._variable_keys: {'target_param', 'fold_generator', 'exp_id', 'html_param', 'gpu_n_jobs_param', 'y_train', 'data', '_available_plots', 'transform_target_param', 'memory', 'X_test', 'exp_name_log', 'idx', 'logging_param', 'log_plots_param', '_ml_usecase', 'seed', 'X_train', 'gpu_param', 'fold_groups_param', 'USI', 'X', 'y', 'n_jobs_param', 'pipeline', 'fold_shuffle_param', 'y_test'}
+2026-02-03 10:38:15,867:INFO:Checking environment
+2026-02-03 10:38:15,867:INFO:python_version: 3.11.9
+2026-02-03 10:38:15,867:INFO:python_build: ('tags/v3.11.9:de54cf5', 'Apr  2 2024 10:12:12')
+2026-02-03 10:38:15,868:INFO:machine: AMD64
+2026-02-03 10:38:15,881:INFO:platform: Windows-10-10.0.26200-SP0
+2026-02-03 10:38:15,881:INFO:Memory: svmem(total=16866873344, available=2464759808, percent=85.4, used=14402113536, free=2464759808)
+2026-02-03 10:38:15,881:INFO:Physical Core: 8
+2026-02-03 10:38:15,881:INFO:Logical Core: 16
+2026-02-03 10:38:15,881:INFO:Checking libraries
+2026-02-03 10:38:15,881:INFO:System:
+2026-02-03 10:38:15,881:INFO:    python: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2026-02-03 10:38:15,882:INFO:executable: C:\Users\tream\AppData\Local\Programs\Python\Python311\python.exe
+2026-02-03 10:38:15,882:INFO:   machine: Windows-10-10.0.26200-SP0
+2026-02-03 10:38:15,882:INFO:PyCaret required dependencies:
+2026-02-03 10:38:15,988:INFO:                 pip: 24.0
+2026-02-03 10:38:15,988:INFO:          setuptools: 80.9.0
+2026-02-03 10:38:15,988:INFO:             pycaret: 3.3.2
+2026-02-03 10:38:15,988:INFO:             IPython: 9.8.0
+2026-02-03 10:38:15,988:INFO:          ipywidgets: 8.1.8
+2026-02-03 10:38:15,988:INFO:                tqdm: 4.67.1
+2026-02-03 10:38:15,989:INFO:               numpy: 1.26.4
+2026-02-03 10:38:15,989:INFO:              pandas: 2.1.4
+2026-02-03 10:38:15,989:INFO:              jinja2: 3.1.6
+2026-02-03 10:38:15,989:INFO:               scipy: 1.11.4
+2026-02-03 10:38:15,989:INFO:              joblib: 1.3.2
+2026-02-03 10:38:15,989:INFO:             sklearn: 1.4.2
+2026-02-03 10:38:15,989:INFO:                pyod: 2.0.6
+2026-02-03 10:38:15,989:INFO:            imblearn: 0.14.1
+2026-02-03 10:38:15,989:INFO:   category_encoders: 2.7.0
+2026-02-03 10:38:15,989:INFO:            lightgbm: 4.6.0
+2026-02-03 10:38:15,989:INFO:               numba: 0.63.1
+2026-02-03 10:38:15,989:INFO:            requests: 2.32.5
+2026-02-03 10:38:15,989:INFO:          matplotlib: 3.7.5
+2026-02-03 10:38:15,989:INFO:          scikitplot: 0.3.7
+2026-02-03 10:38:15,989:INFO:         yellowbrick: 1.5
+2026-02-03 10:38:15,989:INFO:              plotly: 6.5.0
+2026-02-03 10:38:15,989:INFO:    plotly-resampler: Not installed
+2026-02-03 10:38:15,989:INFO:             kaleido: 1.2.0
+2026-02-03 10:38:15,989:INFO:           schemdraw: 0.15
+2026-02-03 10:38:15,989:INFO:         statsmodels: 0.14.6
+2026-02-03 10:38:15,989:INFO:              sktime: 0.26.0
+2026-02-03 10:38:15,989:INFO:               tbats: 1.1.3
+2026-02-03 10:38:15,990:INFO:            pmdarima: 2.0.4
+2026-02-03 10:38:15,990:INFO:              psutil: 7.1.3
+2026-02-03 10:38:15,990:INFO:          markupsafe: 3.0.3
+2026-02-03 10:38:15,990:INFO:             pickle5: Not installed
+2026-02-03 10:38:15,990:INFO:         cloudpickle: 3.1.2
+2026-02-03 10:38:15,990:INFO:         deprecation: 2.1.0
+2026-02-03 10:38:15,990:INFO:              xxhash: 3.6.0
+2026-02-03 10:38:15,990:INFO:           wurlitzer: Not installed
+2026-02-03 10:38:15,990:INFO:PyCaret optional dependencies:
+2026-02-03 10:38:16,656:INFO:                shap: Not installed
+2026-02-03 10:38:16,656:INFO:           interpret: Not installed
+2026-02-03 10:38:16,656:INFO:                umap: Not installed
+2026-02-03 10:38:16,656:INFO:     ydata_profiling: Not installed
+2026-02-03 10:38:16,656:INFO:  explainerdashboard: Not installed
+2026-02-03 10:38:16,656:INFO:             autoviz: Not installed
+2026-02-03 10:38:16,656:INFO:           fairlearn: Not installed
+2026-02-03 10:38:16,656:INFO:          deepchecks: Not installed
+2026-02-03 10:38:16,656:INFO:             xgboost: 3.1.2
+2026-02-03 10:38:16,656:INFO:            catboost: 1.2.8
+2026-02-03 10:38:16,656:INFO:              kmodes: Not installed
+2026-02-03 10:38:16,656:INFO:             mlxtend: Not installed
+2026-02-03 10:38:16,656:INFO:       statsforecast: Not installed
+2026-02-03 10:38:16,656:INFO:        tune_sklearn: Not installed
+2026-02-03 10:38:16,656:INFO:                 ray: Not installed
+2026-02-03 10:38:16,656:INFO:            hyperopt: Not installed
+2026-02-03 10:38:16,656:INFO:              optuna: 4.6.0
+2026-02-03 10:38:16,656:INFO:               skopt: Not installed
+2026-02-03 10:38:16,656:INFO:              mlflow: Not installed
+2026-02-03 10:38:16,656:INFO:              gradio: Not installed
+2026-02-03 10:38:16,656:INFO:             fastapi: 0.123.10
+2026-02-03 10:38:16,656:INFO:             uvicorn: 0.38.0
+2026-02-03 10:38:16,656:INFO:              m2cgen: Not installed
+2026-02-03 10:38:16,657:INFO:           evidently: Not installed
+2026-02-03 10:38:16,657:INFO:               fugue: Not installed
+2026-02-03 10:38:16,657:INFO:           streamlit: Not installed
+2026-02-03 10:38:16,657:INFO:             prophet: Not installed
+2026-02-03 10:38:16,657:INFO:None
+2026-02-03 10:38:16,657:INFO:Set up data.
+2026-02-03 10:38:16,666:INFO:Set up folding strategy.
+2026-02-03 10:38:16,666:INFO:Set up train/test split.
+2026-02-03 10:38:16,675:INFO:Set up index.
+2026-02-03 10:38:16,675:INFO:Assigning column types.
+2026-02-03 10:38:16,680:INFO:Engine successfully changes for model 'lr' to 'sklearn'.
+2026-02-03 10:38:16,680:INFO:Engine for model 'lasso' has not been set explicitly, hence returning None.
+2026-02-03 10:38:16,686:INFO:Engine for model 'ridge' has not been set explicitly, hence returning None.
+2026-02-03 10:38:16,692:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2026-02-03 10:38:16,772:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:38:16,830:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2026-02-03 10:38:16,831:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:38:16,834:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:38:16,878:INFO:Engine for model 'lasso' has not been set explicitly, hence returning None.
+2026-02-03 10:38:16,884:INFO:Engine for model 'ridge' has not been set explicitly, hence returning None.
+2026-02-03 10:38:16,890:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2026-02-03 10:38:16,965:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,023:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,024:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:38:17,027:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:38:17,028:INFO:Engine successfully changes for model 'lasso' to 'sklearn'.
+2026-02-03 10:38:17,034:INFO:Engine for model 'ridge' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,040:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,114:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,173:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,174:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:38:17,177:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:38:17,184:INFO:Engine for model 'ridge' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,190:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,264:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,322:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,322:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:38:17,325:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:38:17,326:INFO:Engine successfully changes for model 'ridge' to 'sklearn'.
+2026-02-03 10:38:17,338:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,411:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,469:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,472:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:38:17,476:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:38:17,488:INFO:Engine for model 'en' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,563:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,621:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,622:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:38:17,625:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:38:17,626:INFO:Engine successfully changes for model 'en' to 'sklearn'.
+2026-02-03 10:38:17,714:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,772:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,773:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:38:17,776:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:38:17,862:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,919:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2026-02-03 10:38:17,920:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:38:17,923:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:38:17,924:INFO:Engine successfully changes for model 'knn' to 'sklearn'.
+2026-02-03 10:38:18,009:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:38:18,069:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:38:18,072:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:38:18,159:INFO:Engine for model 'svm' has not been set explicitly, hence returning None.
+2026-02-03 10:38:18,216:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:38:18,220:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:38:18,220:INFO:Engine successfully changes for model 'svm' to 'sklearn'.
+2026-02-03 10:38:18,363:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:38:18,367:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:38:18,510:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:38:18,514:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:38:18,516:INFO:Preparing preprocessing pipeline...
+2026-02-03 10:38:18,516:INFO:Set up simple imputation.
+2026-02-03 10:38:18,519:INFO:Set up encoding of ordinal features.
+2026-02-03 10:38:18,521:INFO:Set up encoding of categorical features.
+2026-02-03 10:38:18,578:INFO:Finished creating preprocessing pipeline.
+2026-02-03 10:38:18,610:INFO:Pipeline: Pipeline(memory=FastMemory(location=C:\Users\tream\AppData\Local\Temp\joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(include=['CRIM', 'ZN', 'INDUS', 'CHAS',
+                                             'NOX', 'RM', 'AGE', 'DIS', 'RAD',
+                                             'TAX', 'PTRATIO', 'B', 'LSTAT'],
+                                    transformer=SimpleImputer())),
+                ('categorical_imputer',
+                 TransformerWrapper(include=['Age_Group'],
+                                    transformer=SimpleImputer(strategy='most_frequent'))),
+                ('ordinal_encoding',
+                 TransformerWrapper(include=['Age_Group'],
+                                    transformer=OrdinalEncoder(cols=['Age_Group'],
+                                                               handle_missing='return_nan',
+                                                               mapping=[{'col': 'Age_Group',
+                                                                         'data_type': dtype('O'),
+                                                                         'mapping': Old      0
+Young    1
+NaN     -1
+dtype: int64}])))])
+2026-02-03 10:38:18,610:INFO:Creating final display dataframe.
+2026-02-03 10:38:18,767:INFO:Setup _display_container:                     Description             Value
+0                    Session id               123
+1                        Target              MEDV
+2                   Target type        Regression
+3           Original data shape         (243, 15)
+4        Transformed data shape         (243, 15)
+5   Transformed train set shape         (170, 15)
+6    Transformed test set shape          (73, 15)
+7              Numeric features                13
+8          Categorical features                 1
+9                    Preprocess              True
+10              Imputation type            simple
+11           Numeric imputation              mean
+12       Categorical imputation              mode
+13     Maximum one-hot encoding                25
+14              Encoding method              None
+15               Fold Generator             KFold
+16                  Fold Number                10
+17                     CPU Jobs                -1
+18                      Use GPU             False
+19               Log Experiment             False
+20              Experiment Name  reg-default-name
+21                          USI              444c
+2026-02-03 10:38:18,911:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:38:18,915:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:38:19,060:INFO:Soft dependency imported: xgboost: 3.1.2
+2026-02-03 10:38:19,063:INFO:Soft dependency imported: catboost: 1.2.8
+2026-02-03 10:38:19,064:INFO:setup() successfully completed in 3.2s...............
+2026-02-03 10:38:19,065:INFO:Initializing create_model()
+2026-02-03 10:38:19,065:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001D2F53A7410>, estimator=lr, fold=None, round=4, cross_validation=True, predict=True, fit_kwargs=None, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=True, add_to_model_list=True, metrics=None, display=None, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2026-02-03 10:38:19,065:INFO:Checking exceptions
+2026-02-03 10:38:19,066:INFO:Importing libraries
+2026-02-03 10:38:19,066:INFO:Copying training dataset
+2026-02-03 10:38:19,071:INFO:Defining folds
+2026-02-03 10:38:19,071:INFO:Declaring metric variables
+2026-02-03 10:38:19,071:INFO:Importing untrained model
+2026-02-03 10:38:19,072:INFO:Linear Regression Imported successfully
+2026-02-03 10:38:19,072:INFO:Starting cross validation
+2026-02-03 10:38:19,082:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2026-02-03 10:38:24,385:INFO:Calculating mean and std
+2026-02-03 10:38:24,386:INFO:Creating metrics dataframe
+2026-02-03 10:38:24,390:INFO:Finalizing model
+2026-02-03 10:38:24,438:INFO:Uploading results into container
+2026-02-03 10:38:24,439:INFO:Uploading model into container now
+2026-02-03 10:38:24,439:INFO:_master_model_container: 1
+2026-02-03 10:38:24,440:INFO:_display_container: 2
+2026-02-03 10:38:24,440:INFO:LinearRegression(n_jobs=-1)
+2026-02-03 10:38:24,440:INFO:create_model() successfully completed......................................
+2026-02-03 10:38:24,588:INFO:Initializing create_model()
+2026-02-03 10:38:24,588:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001D2F53A7410>, estimator=dt, fold=None, round=4, cross_validation=True, predict=True, fit_kwargs=None, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=True, add_to_model_list=True, metrics=None, display=None, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2026-02-03 10:38:24,588:INFO:Checking exceptions
+2026-02-03 10:38:24,589:INFO:Importing libraries
+2026-02-03 10:38:24,589:INFO:Copying training dataset
+2026-02-03 10:38:24,594:INFO:Defining folds
+2026-02-03 10:38:24,594:INFO:Declaring metric variables
+2026-02-03 10:38:24,594:INFO:Importing untrained model
+2026-02-03 10:38:24,594:INFO:Decision Tree Regressor Imported successfully
+2026-02-03 10:38:24,595:INFO:Starting cross validation
+2026-02-03 10:38:24,596:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2026-02-03 10:38:28,383:INFO:Calculating mean and std
+2026-02-03 10:38:28,383:INFO:Creating metrics dataframe
+2026-02-03 10:38:28,386:INFO:Finalizing model
+2026-02-03 10:38:28,415:INFO:Uploading results into container
+2026-02-03 10:38:28,416:INFO:Uploading model into container now
+2026-02-03 10:38:28,416:INFO:_master_model_container: 2
+2026-02-03 10:38:28,416:INFO:_display_container: 3
+2026-02-03 10:38:28,417:INFO:DecisionTreeRegressor(random_state=123)
+2026-02-03 10:38:28,417:INFO:create_model() successfully completed......................................
+2026-02-03 10:38:28,556:INFO:Initializing create_model()
+2026-02-03 10:38:28,556:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001D2F53A7410>, estimator=lightgbm, fold=None, round=4, cross_validation=True, predict=True, fit_kwargs=None, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=True, add_to_model_list=True, metrics=None, display=None, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2026-02-03 10:38:28,556:INFO:Checking exceptions
+2026-02-03 10:38:28,557:INFO:Importing libraries
+2026-02-03 10:38:28,557:INFO:Copying training dataset
+2026-02-03 10:38:28,562:INFO:Defining folds
+2026-02-03 10:38:28,562:INFO:Declaring metric variables
+2026-02-03 10:38:28,562:INFO:Importing untrained model
+2026-02-03 10:38:28,563:INFO:Light Gradient Boosting Machine Imported successfully
+2026-02-03 10:38:28,564:INFO:Starting cross validation
+2026-02-03 10:38:28,565:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2026-02-03 10:38:29,389:INFO:Calculating mean and std
+2026-02-03 10:38:29,390:INFO:Creating metrics dataframe
+2026-02-03 10:38:29,392:INFO:Finalizing model
+2026-02-03 10:38:29,435:INFO:[LightGBM] [Info] Auto-choosing col-wise multi-threading, the overhead of testing was 0.000316 seconds.
+2026-02-03 10:38:29,435:INFO:You can set `force_col_wise=true` to remove the overhead.
+2026-02-03 10:38:29,436:INFO:[LightGBM] [Info] Total Bins 463
+2026-02-03 10:38:29,437:INFO:[LightGBM] [Info] Number of data points in the train set: 170, number of used features: 12
+2026-02-03 10:38:29,438:INFO:[LightGBM] [Info] Start training from score 22.974706
+2026-02-03 10:38:29,439:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,440:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,441:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,443:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,444:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,445:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,446:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,447:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,448:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,449:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,450:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,451:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,452:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,453:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,454:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,455:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,456:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,456:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,457:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,458:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,459:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,460:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,461:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,462:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,463:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,463:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,464:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,465:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,466:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,467:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,468:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,469:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,470:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,471:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,472:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,472:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,474:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,475:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,476:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,477:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,478:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,479:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,479:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,480:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,481:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,482:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,482:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,483:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,484:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,484:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,485:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,486:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,487:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,488:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,488:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,489:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,489:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,490:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,490:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,490:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,491:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,491:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,491:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,491:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,492:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,492:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,492:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,492:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,493:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,493:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,493:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,493:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,494:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,494:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,494:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,494:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,494:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,495:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,495:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,495:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,495:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,495:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,495:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,496:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,496:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,496:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,496:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,496:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,497:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,497:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,497:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,497:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,497:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,497:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,498:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,498:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,498:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,498:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,498:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,498:INFO:[LightGBM] [Warning] No further splits with positive gain, best gain: -inf
+2026-02-03 10:38:29,507:INFO:Uploading results into container
+2026-02-03 10:38:29,508:INFO:Uploading model into container now
+2026-02-03 10:38:29,509:INFO:_master_model_container: 3
+2026-02-03 10:38:29,509:INFO:_display_container: 4
+2026-02-03 10:38:29,510:INFO:LGBMRegressor(n_jobs=-1, random_state=123)
+2026-02-03 10:38:29,510:INFO:create_model() successfully completed......................................
+2026-02-03 10:38:29,661:INFO:Initializing blend_models()
+2026-02-03 10:38:29,661:INFO:blend_models(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001D2F53A7410>, estimator_list=[LinearRegression(n_jobs=-1), DecisionTreeRegressor(random_state=123), LGBMRegressor(n_jobs=-1, random_state=123)], fold=None, round=4, choose_better=False, optimize=R2, method=auto, weights=None, fit_kwargs=None, groups=None, probability_threshold=None, verbose=False, return_train_score=False)
+2026-02-03 10:38:29,661:INFO:Checking exceptions
+2026-02-03 10:38:29,664:INFO:Importing libraries
+2026-02-03 10:38:29,664:INFO:Copying training dataset
+2026-02-03 10:38:29,664:INFO:Getting model names
+2026-02-03 10:38:29,665:INFO:SubProcess create_model() called ==================================
+2026-02-03 10:38:29,669:INFO:Initializing create_model()
+2026-02-03 10:38:29,669:INFO:create_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001D2F53A7410>, estimator=VotingRegressor(estimators=[('Linear Regression', LinearRegression(n_jobs=-1)),
+                            ('Decision Tree Regressor',
+                             DecisionTreeRegressor(random_state=123)),
+                            ('Light Gradient Boosting Machine',
+                             LGBMRegressor(n_jobs=-1, random_state=123))],
+                n_jobs=-1), fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=True, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001D2CDBAA810>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2026-02-03 10:38:29,669:INFO:Checking exceptions
+2026-02-03 10:38:29,669:INFO:Importing libraries
+2026-02-03 10:38:29,669:INFO:Copying training dataset
+2026-02-03 10:38:29,673:INFO:Defining folds
+2026-02-03 10:38:29,673:INFO:Declaring metric variables
+2026-02-03 10:38:29,674:INFO:Importing untrained model
+2026-02-03 10:38:29,674:INFO:Declaring custom model
+2026-02-03 10:38:29,676:INFO:Voting Regressor Imported successfully
+2026-02-03 10:38:29,676:INFO:Starting cross validation
+2026-02-03 10:38:29,677:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2026-02-03 10:38:30,720:INFO:Calculating mean and std
+2026-02-03 10:38:30,721:INFO:Creating metrics dataframe
+2026-02-03 10:38:30,724:INFO:Finalizing model
+2026-02-03 10:38:30,867:INFO:Uploading results into container
+2026-02-03 10:38:30,869:INFO:Uploading model into container now
+2026-02-03 10:38:30,870:INFO:_master_model_container: 4
+2026-02-03 10:38:30,870:INFO:_display_container: 5
+2026-02-03 10:38:30,877:INFO:VotingRegressor(estimators=[('Linear Regression', LinearRegression(n_jobs=-1)),
+                            ('Decision Tree Regressor',
+                             DecisionTreeRegressor(random_state=123)),
+                            ('Light Gradient Boosting Machine',
+                             LGBMRegressor(n_jobs=-1, random_state=123))],
+                n_jobs=-1)
+2026-02-03 10:38:30,877:INFO:create_model() successfully completed......................................
+2026-02-03 10:38:31,025:INFO:SubProcess create_model() end ==================================
+2026-02-03 10:38:31,025:INFO:_master_model_container: 4
+2026-02-03 10:38:31,026:INFO:_display_container: 5
+2026-02-03 10:38:31,031:INFO:VotingRegressor(estimators=[('Linear Regression', LinearRegression(n_jobs=-1)),
+                            ('Decision Tree Regressor',
+                             DecisionTreeRegressor(random_state=123)),
+                            ('Light Gradient Boosting Machine',
+                             LGBMRegressor(n_jobs=-1, random_state=123))],
+                n_jobs=-1)
+2026-02-03 10:38:31,031:INFO:blend_models() successfully completed......................................
+2026-02-03 10:38:31,164:INFO:Initializing predict_model()
+2026-02-03 10:38:31,164:INFO:predict_model(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001D2F53A7410>, estimator=VotingRegressor(estimators=[('Linear Regression', LinearRegression(n_jobs=-1)),
+                            ('Decision Tree Regressor',
+                             DecisionTreeRegressor(random_state=123)),
+                            ('Light Gradient Boosting Machine',
+                             LGBMRegressor(n_jobs=-1, random_state=123))],
+                n_jobs=-1), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=False, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001D2F6264F40>)
+2026-02-03 10:38:31,164:INFO:Checking exceptions
+2026-02-03 10:38:31,164:INFO:Preloading libraries
+2026-02-03 10:38:31,402:INFO:Initializing get_config()
+2026-02-03 10:38:31,403:INFO:get_config(self=<pycaret.regression.oop.RegressionExperiment object at 0x000001D2F53A7410>, variable=target_param)
+2026-02-03 10:38:31,403:INFO:Variable:  returned as MEDV
+2026-02-03 10:38:31,403:INFO:get_config() successfully completed......................................
