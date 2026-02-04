@@ -1,13 +1,13 @@
 import pandas as pd
+import numpy as np  # [FIX 1] Import Numpy
 import json
 import os
 from dotenv import load_dotenv
 import google.generativeai as genai
 import traceback
-# --- PERBAIKAN: Tambahkan import typing di sini ---
 from typing import List, Union, Dict 
 
-# Import prompt template dari file prompts.py
+# Import prompt template
 from app.services.prompts import generate_feature_engineering_prompt
 
 # 1. LOAD ENVIRONMENT VARIABLES
@@ -19,7 +19,6 @@ API_KEY = os.getenv("GEMINI_API_KEY")
 if not API_KEY:
     print("⚠️ WARNING: GEMINI_API_KEY tidak ditemukan di .env! Fitur AI tidak akan berjalan.")
 else:
-    # Menggunakan model Gemini Pro
     genai.configure(api_key=API_KEY)
 
 def get_llm_response(prompt_text: str) -> str:
@@ -30,29 +29,33 @@ def get_llm_response(prompt_text: str) -> str:
         raise ValueError("API Key belum disetting.")
 
     try:
-        # Menggunakan model Gemini Pro (pastikan nama model benar)
-        model = genai.GenerativeModel('gemma-3-27b-it') 
+        # [FIX 2] Gunakan model yang stabil, cepat, dan murah untuk task ini
+        # gemini-1.5-flash sangat direkomendasikan untuk tugas coding sederhana/JSON
+        model = genai.GenerativeModel('gemini-2.5-flash') 
         
-        # Kirim prompt
-        response = model.generate_content(prompt_text)
+        # Set temperature rendah agar output konsisten (deterministic)
+        generation_config = genai.GenerationConfig(temperature=0.2)
         
-        # Ambil text balasan
+        response = model.generate_content(prompt_text, generation_config=generation_config)
         return response.text
     except Exception as e:
         print(f"❌ Error saat memanggil Gemini: {e}")
         return "[]"
 
-def generate_features_plan(df: pd.DataFrame, description: str = "Dataset User"):
+def generate_features_plan(df: pd.DataFrame, description: str = "Dataset User") -> List[Dict]:
     """
     Step A: Mengirim data ke LLM dan meminta saran fitur.
-    Mengembalikan List of Dictionary (JSON) dari LLM.
     """
     print("🤖 AI Feature Engineer sedang berpikir...")
     
-    # 1. Generate Prompt
-    prompt_text = generate_feature_engineering_prompt(description, df)
+    # [FIX 3] Deteksi Target Column secara otomatis (asumsi kolom terakhir)
+    # Ini penting agar Prompt tahu fitur apa yang relevan dibuat
+    target_col = df.columns[-1] if not df.empty else None
     
-    # 2. Call LLM
+    # Generate Prompt dengan Target Context
+    prompt_text = generate_feature_engineering_prompt(description, df, target_col=target_col)
+    
+    # Call LLM
     try:
         response_text = get_llm_response(prompt_text)
         print("   📩 Terima balasan dari AI.")
@@ -60,9 +63,18 @@ def generate_features_plan(df: pd.DataFrame, description: str = "Dataset User"):
         print(f"   ⚠️ Gagal koneksi ke AI: {e}")
         return []
     
-    # 3. Parsing JSON
+    # Parsing JSON (Robust)
     try:
+        # Bersihkan markdown code block jika ada
         clean_text = response_text.replace("```json", "").replace("```", "").strip()
+        
+        # [FIX 4] Kadang LLM memberi teks sebelum JSON, cari kurung siku pertama dan terakhir
+        start_idx = clean_text.find('[')
+        end_idx = clean_text.rfind(']') + 1
+        
+        if start_idx != -1 and end_idx != -1:
+            clean_text = clean_text[start_idx:end_idx]
+            
         features_plan = json.loads(clean_text)
         
         if not isinstance(features_plan, list):
@@ -79,7 +91,6 @@ def execute_feature_code(df: pd.DataFrame, features_plan: List[Union[Dict, objec
     """
     Step B: EXECUTOR TOOL.
     Menjalankan kode saran dari LLM ke DataFrame asli secara aman.
-    Support input berupa List of Dicts ATAU List of Pydantic Models.
     """
     if not features_plan:
         print("   ⚠️ Tidak ada rencana fitur untuk dieksekusi.")
@@ -87,12 +98,13 @@ def execute_feature_code(df: pd.DataFrame, features_plan: List[Union[Dict, objec
 
     print(f"⚙️ Menerapkan {len(features_plan)} fitur baru...")
     
-    safe_locals = {'df': df, 'pd': pd} 
+    # [FIX 5] Tambahkan 'np' (NumPy) ke safe_locals agar rumus matematika jalan
+    safe_locals = {'df': df, 'pd': pd, 'np': np} 
     
     report = []
     
     for item in features_plan:
-        # Cek tipe item (Dict atau Pydantic Model)
+        # Handle Pydantic vs Dict
         if hasattr(item, 'model_dump'):
             item_dict = item.model_dump()
         elif hasattr(item, 'dict'):
@@ -109,13 +121,17 @@ def execute_feature_code(df: pd.DataFrame, features_plan: List[Union[Dict, objec
             continue
             
         try:
+            # Security Check Basic
             if "import" in expr or "os." in expr or "sys." in expr or "open(" in expr:
                 raise ValueError("Kode ditolak (Unsafe/Berbahaya)")
 
+            # Eksekusi Kode
             full_code = f"df['{col_name}'] = {expr}"
             
+            # Exec menggunakan safe_locals yang sudah ada numpy
             exec(full_code, {}, safe_locals)
             
+            # Ambil hasil
             df[col_name] = safe_locals['df'][col_name]
             
             print(f"   ✅ Created: {col_name}")
